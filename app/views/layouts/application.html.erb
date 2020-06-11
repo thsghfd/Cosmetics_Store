@@ -1,14 +1,121 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>App</title>
+    <title>Natural Cosmetics Co.</title>
     <%= csrf_meta_tags %>
-
+    <link href="//fonts.googleapis.com/css2?family=Open+Sans:wght@600;700;800&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+
+    <div class="home-callout text-center">
+             <%= link_to root_path do %> <i class="fa fa-envira", style="color:green"></i>
+                 <% end %>
+      <h1>Natural Cosmetics Co.</h1>
+      <h3>Natural cosmetics made for you</i></h3>
+      </div>
+  
+
+
+<div class="navbar text-center">
+  
+  <!-- Navigation bar 1st dropdown button -->
+  
+  <div class="dropdown">
+  <button class="dropbtn">Eyes
+      <i class="fa fa-caret-down"></i>
+    </button>
+    
+    <div class="dropdown-content">
+      <%= link_to "Eye Brows", eye_brows_path %>
+      <%= link_to "Eye Shadow", eye_shadow_path %>
+      <%= link_to "Eye Liner", eye_liner_path %>
+    </div>
+  </div> 
+  
+  <!-- Navigation bar 2nd dropdown button -->
+  
+   <div class="dropdown2">
+    <button class="dropbtn2">Face
+      <i class="fa fa-caret-down"></i>
+    </button>
+
+    <div class="dropdown-content2">
+      <%= link_to "Face Cream", root_path %>
+      <%= link_to "Blush", root_path %>
+      <%= link_to "Foundation", root_path %>
+    </div>
+  </div>
+  
+  <!-- Navigation bar 3rd dropdown button -->
+  
+    <div class="dropdown3">
+    <button class="dropbtn3">Nails
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content3">
+      <%= link_to "Nail Polish", root_path %>
+      <%= link_to "Nail Care", root_path %>
+    </div>
+  </div>
+
+<!-- Navigation bar 4th dropdown button -->
+
+     <div class="dropdown4">
+    <button class="dropbtn3">Body
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content4">
+      <%= link_to "Body Cream", root_path %>
+      <%= link_to "Body Scrub", root_path %>
+      <%= link_to "Body Care", root_path %>
+    </div>
+  </div>
+  
+  <!-- Navigation bar 5th dropdown button -->
+  
+     <div class="dropdown5">
+      <button class="dropbtn5">Lips
+      <i class="fa fa-caret-down"></i>
+      </button>
+    <div class="dropdown-content5">
+      <%= link_to "Lip Stick", root_path %>
+      <%= link_to "Lip Balm", root_path %>
+      <%= link_to "Lip Care", root_path %>
+    </div>
+  </div> 
+  
+  <!-- Navigation bar 6th dropdown button -->
+  
+     <div class="dropdown6">
+           <button class="dropbtn6">More
+      <i class="fa fa-caret-down"></i>
+      </button>
+    <div class="dropdown-content6">
+            <%= link_to "About Us", about_path %>
+            <%= link_to "Frequently Asked Questions", faq_path %>
+            <%= link_to "Terms and Conditions", root_path %>
+            <%= link_to "Contact Us", contact_us_path %>
+      </div>
+
+</div>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+
+
+</div> 
+<div class="container">
+    <% flash.each do |type, msg| %>
+      <%= content_tag :div, msg, class: "alert alert-#{type}" %>
+    <% end %>
+      </div>
+ 
+     <%= yield %>
+
+ 
   </body>
 </html>
